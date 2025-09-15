@@ -96,6 +96,9 @@
       text-align: center;
     }
     #about .content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
       background: url('Ruan gooi.jpeg') no-repeat left center/cover;
       padding: 40px 60px;
       border-radius: 10px;
@@ -105,6 +108,10 @@
       text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
       filter: brightness(1.2); /* slightly lighter */
+    }
+    #about .text {
+      max-width: 500px;
+      text-align: left;
     }
 
     /* General section headings */
@@ -254,14 +261,84 @@
       }
       nav a {
         margin: 10px 15px;
+        font-size: 0.85rem;
       }
+
+      /* Header */
+      header {
+        height: auto;
+        padding: 40px 20px;
+      }
+      header img.logo {
+        max-width: 200px;
+      }
+      header p {
+        font-size: 1.5rem;
+        max-width: 100%;
+      }
+      .btn-primary {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+
+      /* About section */
+      #about .content {
+        display: block;
+        text-align: center;
+        background-position: center center;
+        padding: 20px 15px;
+      }
+      #about .text {
+        max-width: 100%;
+        margin-top: 20px;
+        text-align: center;
+      }
+      #about p {
+        font-size: 1.2rem;
+      }
+      section h2 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+
+      /* Services section */
       .services-list {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 15px;
       }
-      #about .content {
-        background-position: center center; /* adjust photo on mobile */
-        padding: 30px 20px;
+      .service-item {
+        flex: 1 1 100%;
+        padding: 20px 15px;
+      }
+      .service-item h3 {
+        font-size: 1.3rem;
+      }
+      .service-item p {
+        font-size: 1rem;
+      }
+
+      /* Gallery */
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        gap: 15px;
+      }
+
+      /* Contact form */
+      form {
+        gap: 10px;
+      }
+      input, textarea, button[type="submit"] {
+        font-size: 0.95rem;
+        padding: 12px 15px;
+      }
+
+      /* WhatsApp button */
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
       }
     }
   </style>
@@ -283,16 +360,18 @@
 
   <section id="about">
     <div class="content">
-      <h2>The Man Behind the Beard</h2>
-      <p>
-        I’m The Bearded Fisher, and for as long as I can remember, the water has called me. Over the past 30 years, I’ve honed my skills in both freshwater and saltwater, from serene rivers and dams to the wild rock and surf, proudly representing Western Province along the way.
-      </p>
-      <p>
-        Sharing this passion with others, whether you’re a first-timer or a seasoned angler, is what drives me. Every trip is more than just catching fish; it’s about the quiet moments on the water, the rush when a fish takes the bait, and the stories that stay with you long after the day is done.
-      </p>
-      <p>
-        I live by it, and after one of my trips, you might just feel the same—<strong>Fishing is Life.</strong>
-      </p>
+      <div class="text">
+        <h2>The Man Behind the Beard</h2>
+        <p>
+          I’m The Bearded Fisher, and for as long as I can remember, the water has called me. Over the past 30 years, I’ve honed my skills in both freshwater and saltwater, from serene rivers and dams to the wild rock and surf, proudly representing Western Province along the way.
+        </p>
+        <p>
+          Sharing this passion with others, whether you’re a first-timer or a seasoned angler, is what drives me. Every trip is more than just catching fish; it’s about the quiet moments on the water, the rush when a fish takes the bait, and the stories that stay with you long after the day is done.
+        </p>
+        <p>
+          I live by it, and after one of my trips, you might just feel the same—<strong>Fishing is Life.</strong>
+        </p>
+      </div>
     </div>
   </section>
 
