@@ -106,12 +106,20 @@
       text-shadow:  2px 2px 6px rgba(0,0,0,0.7);
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
-    #about h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
+/* General section headings */
+section h2 {
+  font-size: 2.5rem;        /* same as About */
+  text-transform: uppercase; /* all uppercase */
+  text-align: center;        /* centered */
+  letter-spacing: 3px;       /* spacing between letters */
+  margin-bottom: 20px;
+  color: #222;               /* default dark for light sections */
+}
+
+/* About section heading override */
+#about h2 {
+  color: white;              /* white text on dark overlay */
+}
     #about p {
       font-size: 1.5rem;
       margin-bottom: 20px;
