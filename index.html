@@ -269,23 +269,51 @@
     }
 
     /* Videos section */
-    .videos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-      gap: 20px;
-      justify-items: center;
+    #videos {
+      text-align: center;
+      padding: 60px 20px;
     }
-    .videos-grid iframe {
-      width: 100%;
-      max-width: 500px;
-      height: 280px;
-      border: none;
+    #videos h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .video-thumb {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
       border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .videos-grid iframe:hover {
+    .video-thumb:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+    }
+    .video-thumb img {
+      width: 100%;
+      display: block;
+    }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_(2017).svg') no-repeat center center / contain;
+      transform: translate(-50%, -50%);
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+    }
+    .video-thumb:hover .play-button {
+      opacity: 1;
     }
 
     /* Responsive */
@@ -294,7 +322,6 @@
         margin: 10px 10px;
         font-size: 0.85rem;
       }
-
       header {
         height: auto;
         padding: 40px 20px;
@@ -309,7 +336,6 @@
         padding: 12px 25px;
         font-size: 1rem;
       }
-
       #about .content {
         display: block;
         text-align: center;
@@ -324,18 +350,15 @@
       #about p {
         font-size: 1.2rem;
       }
-
       .services-list {
         flex-direction: column;
       }
       .service-item {
         flex: 1 1 100%;
       }
-
       .gallery-grid {
         grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
       }
-
       form {
         gap: 10px;
       }
@@ -343,15 +366,11 @@
         font-size: 0.95rem;
         padding: 12px 15px;
       }
-
       .whatsapp-float {
         width: 50px;
         height: 50px;
         bottom: 15px;
         right: 15px;
-      }
-      .videos-grid iframe {
-        height: 200px;
       }
     }
   </style>
@@ -373,6 +392,7 @@
     <a href="#contact" class="btn-primary">Book Your Trip</a>
   </header>
 
+  <!-- About -->
   <section id="about">
     <div class="content">
       <div class="text">
@@ -390,6 +410,7 @@
     </div>
   </section>
 
+  <!-- Services -->
   <section id="services" class="services">
     <h2>Choose Your Adventure</h2>
     <div class="services-list">
@@ -404,6 +425,7 @@
     </div>
   </section>
 
+  <!-- Gallery -->
   <section id="gallery" class="gallery">
     <h2>Catch of the Day</h2>
     <div class="gallery-grid">
@@ -416,6 +438,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Let's Hook Up!</h2>
     <form action="https://formspree.io/f/xandzoza" method="POST">
@@ -431,6 +454,7 @@
     </p>
   </section>
   
+  <!-- Social -->
   <section id="social" class="services">
     <h2>Follow Me</h2>
     <div class="services-list">
@@ -449,29 +473,22 @@
     </div>
   </section>
 
+  <!-- Videos -->
   <section id="videos" class="services">
     <h2>Videos</h2>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/-KroKDz5QEk" 
-            title="Video 1" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-
-    <iframe src="https://www.youtube.com/embed/VqJ5DFc_NEY" 
-            title="Video 2" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-
-    <iframe src="https://www.youtube.com/embed/tXESjMuXMhE" 
-            title="Video 3" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-  </div>
-</section>
-
+    <div class="video-container">
+      <div class="video-thumb" data-id="-KroKDz5QEk">
+        <img src="https://img.youtube.com/vi/-KroKDz5QEk/hqdefault.jpg" alt="Video 1">
+        <div class="play-button"></div>
+      </div>
+      <div class="video-thumb" data-id="VqJ5DFc_NEY">
+        <img src="https://img.youtube.com/vi/VqJ5DFc_NEY/hqdefault.jpg" alt="Video 2">
+        <div class="play-button"></div>
+      </div>
+      <div class="video-thumb" data-id="tXESjMuXMhE">
+        <img src="https://img.youtube.com/vi/tXESjMuXMhE/hqdefault.jpg" alt="Video 3">
+        <div class="play-button"></div>
+      </div>
     </div>
   </section>
 
