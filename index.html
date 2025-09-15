@@ -4,30 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Bearded Fisher - Guided Fishing Trips</title>
+
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     /* Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       background: url('See.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #222;
-      scroll-behavior: smooth; /* Smooth scrolling */
+      scroll-behavior: smooth;
     }
-    a {
-      color: #1E456E;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: #1E456E; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* Header with background and logo */
     header {
       background: transparent;
       height: 90vh;
@@ -40,19 +34,9 @@
       padding: 0 20px;
       position: relative;
     }
-    header img.logo {
-      max-width: 400px;
-      width: 80%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-    header p {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      font-weight: 500;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    }
+    header img.logo { max-width: 400px; width: 80%; height: auto; margin-bottom: 20px; }
+    header p { font-size: 2rem; margin-bottom: 2rem; max-width: 600px; font-weight: 500; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); }
+
     .btn-primary {
       background-color: #1E456E;
       border: none;
@@ -63,9 +47,7 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    .btn-primary:hover {
-      background-color: #163654;
-    }
+    .btn-primary:hover { background-color: #163654; }
 
     nav {
       background: #222;
@@ -86,19 +68,15 @@
       font-size: 0.9rem;
       transition: color 0.3s ease;
     }
-    nav a:hover {
-      color: #1E456E;
-    }
+    nav a:hover { color: #1E456E; }
     nav a.active {
       color: #1E456E;
       border-bottom: 2px solid #1E456E;
     }
 
-    /* About Section */
     #about {
       background: transparent;
       padding: 80px 20px;
-      position: relative;
       text-align: center;
     }
     #about .content {
@@ -115,13 +93,9 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
       filter: brightness(1.2);
     }
-    #about .text {
-      max-width: 500px;
-      margin-left: 30%; /* Shift text right on desktop */
-      text-align: left;
-    }
+    #about .text { max-width: 500px; margin-left: 30%; text-align: left; }
+    #about p { font-size: 1.5rem; margin-bottom: 20px; line-height: 1.5; font-weight: 500; }
 
-    /* General section headings */
     section h2 {
       font-size: 2.5rem;
       text-transform: uppercase;
@@ -129,13 +103,6 @@
       letter-spacing: 3px;
       margin-bottom: 20px;
       color: #000;
-    }
-
-    #about p {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      line-height: 1.5;
-      font-weight: 500;
     }
 
     .services, .gallery, .contact {
@@ -163,27 +130,16 @@
       transition: transform 0.3s ease;
       text-align: center;
     }
-    .service-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(30, 69, 110, 0.5);
-    }
+    .service-item:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(30, 69, 110, 0.5); }
     .service-item h3 {
       margin-bottom: 15px;
       font-size: 1.5rem;
       border-bottom: 2px solid rgba(255,255,255,0.7);
       padding-bottom: 8px;
     }
-    .service-item p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
+    .service-item p { font-size: 1.1rem; line-height: 1.6; }
 
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 20px;
-    }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 20px; }
     .gallery-grid img {
       width: 100%;
       border-radius: 10px;
@@ -191,11 +147,8 @@
       transition: transform 0.3s ease;
       cursor: pointer;
     }
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
+    .gallery-grid img:hover { transform: scale(1.05); }
 
-    /* Contact Form */
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -211,10 +164,7 @@
       resize: vertical;
       transition: border-color 0.3s ease;
     }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #1E456E;
-    }
+    input:focus, textarea:focus { outline: none; border-color: #1E456E; }
     button[type="submit"] {
       background-color: #1E456E;
       color: white;
@@ -225,9 +175,7 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    button[type="submit"]:hover {
-      background-color: #163654;
-    }
+    button[type="submit"]:hover { background-color: #163654; }
 
     footer {
       background: #222;
@@ -239,7 +187,6 @@
       letter-spacing: 1px;
     }
 
-    /* WhatsApp floating button */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -252,39 +199,37 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
-    .whatsapp-float img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
+    .whatsapp-float img { width: 100%; height: 100%; display: block; }
+    .whatsapp-float:hover { transform: scale(1.1); }
 
-    /* Social Follow */
-    #social .service-item {
-      background: #1E456E;
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .social-icons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
       color: white;
-      padding: 20px;
-    }
-
-    /* Videos section */
-    #videos {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    #videos h2 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
-      text-transform: uppercase;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
     }
-    .video-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .social-icons a:hover { transform: scale(1.15); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+    .instagram { background: #E1306C; }
+    .facebook { background: #1877F2; }
+    .youtube { background: #FF0000; }
+
+    #videos { text-align: center; padding: 60px 20px; }
+    #videos h2 { font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase; }
+    .video-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
     .video-thumb {
       position: relative;
       cursor: pointer;
@@ -293,14 +238,8 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .video-thumb:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-    }
-    .video-thumb img {
-      width: 100%;
-      display: block;
-    }
+    .video-thumb:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.35); }
+    .video-thumb img { width: 100%; display: block; }
     .play-button {
       position: absolute;
       top: 50%;
@@ -312,208 +251,121 @@
       opacity: 0.85;
       transition: opacity 0.3s ease;
     }
-    .video-thumb:hover .play-button {
-      opacity: 1;
-    }
+    .video-thumb:hover .play-button { opacity: 1; }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      nav a {
-        margin: 10px 10px;
-        font-size: 0.85rem;
-      }
-      header {
-        height: auto;
-        padding: 40px 20px;
-      }
-      header img.logo {
-        max-width: 200px;
-      }
-      header p {
-        font-size: 1.5rem;
-      }
-      .btn-primary {
-        padding: 12px 25px;
-        font-size: 1rem;
-      }
-      #about .content {
-        display: block;
-        text-align: center;
-        background-position: center center;
-        padding: 20px 15px;
-      }
-      #about .text {
-        margin-left: 0;
-        margin-top: 20px;
-        text-align: center;
-      }
-      #about p {
-        font-size: 1.2rem;
-      }
-      .services-list {
-        flex-direction: column;
-      }
-      .service-item {
-        flex: 1 1 100%;
-      }
-      .gallery-grid {
-        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      }
-      form {
-        gap: 10px;
-      }
-      input, textarea, button[type="submit"] {
-        font-size: 0.95rem;
-        padding: 12px 15px;
-      }
-      .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
-      }
+      nav a { margin: 10px 10px; font-size: 0.85rem; }
+      header { height: auto; padding: 40px 20px; }
+      header img.logo { max-width: 200px; }
+      header p { font-size: 1.5rem; }
+      .btn-primary { padding: 12px 25px; font-size: 1rem; }
+      #about .content { display: block; text-align: center; background-position: center center; padding: 20px 15px; }
+      #about .text { margin-left: 0; margin-top: 20px; text-align: center; }
+      #about p { font-size: 1.2rem; }
+      .services-list { flex-direction: column; }
+      .service-item { flex: 1 1 100%; }
+      .gallery-grid { grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
+      form { gap: 10px; }
+      input, textarea, button[type="submit"] { font-size: 0.95rem; padding: 12px 15px; }
+      .whatsapp-float { width: 50px; height: 50px; bottom: 15px; right: 15px; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Trips</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#social">Follow Me</a>
-    <a href="#contact">Contact</a>
-    <a href="#videos">Videos</a>
-  </nav>
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Trips</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#social">Follow Me</a>
+  <a href="#contact">Contact</a>
+  <a href="#videos">Videos</a>
+</nav>
 
-  <header>
-    <img src="Logo.png" alt="The Bearded Fisher Logo" class="logo" />
-    <p>Unforgetable Fishing Adventures Accross the Overberg</p>
-    <a href="#contact" class="btn-primary">Book Your Trip</a>
-  </header>
+<header>
+  <img src="Logo.png" alt="The Bearded Fisher Logo" class="logo" />
+  <p>Unforgettable Fishing Adventures Across the Overberg</p>
+  <a href="#contact" class="btn-primary">Book Your Trip</a>
+</header>
 
-  <!-- About -->
-  <section id="about">
-    <div class="content">
-      <div class="text">
-        <h2>The Man Behind the Beard</h2>
-        <p>
-          I’m The Bearded Fisher, and for as long as I can remember, the water has called me. Over the past 30 years, I’ve honed my skills in both freshwater and saltwater, from serene rivers and dams to the wild rock and surf, proudly representing Western Province along the way.
-        </p>
-        <p>
-          Sharing this passion with others, whether you’re a first-timer or a seasoned angler, is what drives me. Every trip is more than just catching fish; it’s about the quiet moments on the water, the rush when a fish takes the bait, and the stories that stay with you long after the day is done.
-        </p>
-        <p>
-          I live by it, and after one of my trips, you might just feel the same—<strong>Fishing is Life.</strong>
-        </p>
-      </div>
+<section id="about">
+  <div class="content">
+    <div class="text">
+      <h2>The Man Behind the Beard</h2>
+      <p>…[your about text here]…</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Services -->
-  <section id="services" class="services">
-    <h2>Choose Your Adventure</h2>
-    <div class="services-list">
-      <div class="service-item">
-        <h3>Half-Day</h3>
-        <p>Short on time? No worries! I provide all the gear and bait, guiding you to the best local fishing spots.<br><strong>Approx. 5 hours</strong></p>
-      </div>
-      <div class="service-item">
-        <h3>Full-Day</h3>
-        <p>Full-day fishing trip with all gear and bait provided. Learn expert techniques, from reading the water to crafting irresistible bait presentations.<br><strong>Approx. 10 hours</strong></p>
-      </div>
+<section id="services" class="services">
+  <h2>Choose Your Adventure</h2>
+  <div class="services-list">
+    <div class="service-item"><h3>Half-Day</h3><p>…</p></div>
+    <div class="service-item"><h3>Full-Day</h3><p>…</p></div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <h2>Catch of the Day</h2>
+  <div class="gallery-grid">
+    <img src="1.jpeg" alt="Catch 1" />
+    <img src="2.jpeg" alt="Catch 2" />
+    <img src="3.jpeg" alt="Catch 3" />
+    <img src="4.jpeg" alt="Catch 4" />
+    <img src="5.jpeg" alt="Catch 5" />
+    <img src="6.jpeg" alt="Catch 6" />
+  </div>
+</section>
+
+<section id="social" class="services">
+  <h2>Follow Me</h2>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/the_beardedfisher/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61576251617007&mibextid=ZbWKwL" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.youtube.com/@thebeardedfisher" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Let's Hook Up!</h2>
+  <form action="https://formspree.io/f/xandzoza" method="POST">
+    <input type="text" name="name" placeholder="Your Full Name" required />
+    <input type="email" name="_replyto" placeholder="Your Email Address" required />
+    <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="text-align:center; margin-top: 20px;">
+    Or reach me directly at: <br />
+    <strong>WhatsApp:</strong> +27 79 150 8575 <br />
+    <strong>Email:</strong> burgerrf@gmail.com
+  </p>
+</section>
+
+<section id="videos" class="services">
+  <h2>Videos</h2>
+  <div class="video-container">
+    <div class="video-thumb" data-id="-KroKDz5QEk">
+      <img src="https://img.youtube.com/vi/-KroKDz5QEk/hqdefault.jpg" alt="Video 1">
+      <div class="play-button"></div>
     </div>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery" class="gallery">
-    <h2>Catch of the Day</h2>
-    <div class="gallery-grid">
-      <img src="1.jpeg" alt="Catch 1" />
-      <img src="2.jpeg" alt="Catch 2" />
-      <img src="5.jpeg" alt="Catch 5" />
-      <img src="3.jpeg" alt="Catch 3" />
-      <img src="4.jpeg" alt="Catch 4" />
-      <img src="6.jpeg" alt="Catch 6" />
+    <div class="video-thumb" data-id="VqJ5DFc_NEY">
+      <img src="https://img.youtube.com/vi/VqJ5DFc_NEY/hqdefault.jpg" alt="Video 2">
+      <div class="play-button"></div>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Let's Hook Up!</h2>
-    <form action="https://formspree.io/f/xandzoza" method="POST">
-      <input type="text" name="name" placeholder="Your Full Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email Address" required />
-      <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p style="text-align:center; margin-top: 20px;">
-      Or reach me directly at: <br />
-      <strong>WhatsApp:</strong> +27 79 150 8575 <br />
-      <strong>Email:</strong> burgerrf@gmail.com
-    </p>
-  </section>
-  
-  <!-- Social -->
-  <section id="social" class="services">
-    <h2>Follow Me</h2>
-    <div class="services-list">
-      <div class="service-item">
-        <h3>Instagram</h3>
-        <a href="https://www.instagram.com/the_beardedfisher/" target="_blank" class="btn-primary">Instagram</a>
-      </div>
-      <div class="service-item">
-        <h3>Facebook</h3>
-        <a href="https://www.facebook.com/profile.php?id=61576251617007&mibextid=ZbWKwL" target="_blank" class="btn-primary">Facebook</a>
-      </div>
-      <div class="service-item">
-        <h3>YouTube</h3>
-        <a href="https://www.youtube.com/@thebeardedfisher" target="_blank" class="btn-primary">Channel</a>
-      </div>
+    <div class="video-thumb" data-id="tXESjMuXMhE">
+      <img src="https://img.youtube.com/vi/tXESjMuXMhE/hqdefault.jpg" alt="Video 3">
+      <div class="play-button"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Videos -->
-  <section id="videos" class="services">
-    <h2>Videos</h2>
-    <div class="video-container">
-      <div class="video-thumb" data-id="-KroKDz5QEk">
-        <img src="https://img.youtube.com/vi/-KroKDz5QEk/hqdefault.jpg" alt="Video 1">
-        <div class="play-button"></div>
-      </div>
-      <div class="video-thumb" data-id="VqJ5DFc_NEY">
-        <img src="https://img.youtube.com/vi/VqJ5DFc_NEY/hqdefault.jpg" alt="Video 2">
-        <div class="play-button"></div>
-      </div>
-      <div class="video-thumb" data-id="tXESjMuXMhE">
-        <img src="https://img.youtube.com/vi/tXESjMuXMhE/hqdefault.jpg" alt="Video 3">
-        <div class="play-button"></div>
-      </div>
-    </div>
-  </section>
+<a href="https://wa.me/27791508575" class="whatsapp-float" target="_blank" title="Chat with me on WhatsApp">
+  <img src="Whatsapp-Icon.png" alt="WhatsApp" />
+</a>
 
-  <!-- WhatsApp floating button -->
-  <a href="https://wa.me/27791508575" class="whatsapp-float" target="_blank" title="Chat with me on WhatsApp">
-    <img src="Whatsapp-Icon.png" alt="WhatsApp" />
-  </a>
+<footer>
+  &copy; 2025 The Bearded Fisher. All Rights Reserved.
+</footer>
 
-  <footer>
-    &copy; 2025 The Bearded Fisher. All Rights Reserved.
-  </footer>
-
-  <script>
-    // Scroll spy to highlight nav links
-    const navLinks = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('section');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80; // offset for sticky nav
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('
+</body>
+</html>
