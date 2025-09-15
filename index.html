@@ -36,9 +36,6 @@
       padding: 0 20px;
       position: relative;
     }
-    header::after {
-
-    }
     header > * {
       position: relative;
       z-index: 2;
@@ -54,8 +51,7 @@
       font-size: 2.0rem;
       margin-bottom: 2rem;
       max-width: 600px;
-      font-weight: 500
-      
+      font-weight: 500;
     }
     .btn-primary {
       background-color: #1E456E;
@@ -92,7 +88,6 @@
       color: #1E456E;
     }
     section {
-      background: url('Ruan gooi.jpeg') no-repeat center center/cover;
       max-width: 1100px;
       margin: 50px auto;
       padding: 0 20px;
@@ -105,11 +100,28 @@
       text-transform: uppercase;
       letter-spacing: 3px;
     }
-    .about, .services, .gallery, .contact {
-      background: white;
-      padding: 40px 30px;
+    .about {
+      position: relative;
+      background: url('Ruan gooi.jpeg') no-repeat center center/cover;
+      color: white;
+      padding: 60px 30px;
       border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .about::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      border-radius: 10px;
+      z-index: 1;
+    }
+    .about h2,
+    .about p {
+      position: relative;
+      z-index: 2;
     }
     .about p {
       font-size: 1.1rem;
@@ -117,180 +129,15 @@
       margin: 0 auto;
       line-height: 1.8;
     }
+    .services, .gallery, .contact {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
     .services-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 25px;
     }
-    .service-item {
-      background: #1E456E;
-      color: white;
-      padding: 25px 20px;
-      border-radius: 8px;
-      flex: 1 1 320px;
-      box-shadow: 0 6px 15px rgba(30, 69, 110, 0.3);
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-    .service-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(30, 69, 110, 0.5);
-    }
-    .service-item h3 {
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-      border-bottom: 2px solid rgba(255,255,255,0.7);
-      padding-bottom: 8px;
-    }
-    .service-item p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 20px;
-    }
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, textarea {
-      padding: 15px 20px;
-      font-size: 1rem;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      resize: vertical;
-      transition: border-color 0.3s ease;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #1E456E;
-    }
-    button[type="submit"] {
-      background-color: #1E456E;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button[type="submit"]:hover {
-      background-color: #163654;
-    }
-    footer {
-      background: #222;
-      color: #eee;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      nav {
-        flex-wrap: wrap;
-      }
-      nav a {
-        margin: 10px 15px;
-      }
-      .services-list {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Trips</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <header>
-    <h1>The Bearded Fisher</h1>
-    <p>Half Beard. Half Kingfisher.<br>Totally Unforgettable Fishing Trips.</p>
-    <a href="#contact" class="btn-primary">Book Your Trip</a>
-  </header>
-
-  <section id="about" class="about">
-    <h2>The Man Behind the Beard</h2>
-    <p>
-  I’m The Bearded Fisher, and for as long as I can remember, the water has called me. Over the past 30 years, I’ve honed my skills in both freshwater and saltwater, from serene rivers and dams to the wild rock and surf, proudly representing Western Province along the way.
-  </p>
-  <p>
-    Sharing this passion with others, whether you’re a first-timer or a seasoned angler, is what drives me. Every trip is more than just catching fish; it’s about the quiet moments on the water, the rush when a fish takes the bait, and the stories that stay with you long after the day is done.
-  </p>
-  <p>
-    I live by it, and after one of my trips, you might just feel the same—<strong>Fishing is Life.</strong>
-    </p>
-  </section>
-
-  <section id="services" class="services">
-    <h2>Choose Your Adventure</h2>
-    <div class="services-list">
-      <div class="service-item">
-        <h3>Half-Day</h3>
-        <p>Short on time? No worries! I provide all the gear and bait, guiding you to the best local fishing spots.<br><strong>Approx. 5 hours</strong></p>
-      </div>
-      <div class="service-item">
-        <h3>Full-Day</h3>
-        <p>Full-day fishing trip with all gear and bait provided. Learn expert techniques, from reading the water to crafting irresistible bait presentations.<br><strong>Approx. 10 hours</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery" class="gallery">
-    <h2>Catch of the Day</h2>
-    <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=800&q=80" alt="Fishing boat on water" />
-      <img src="https://images.unsplash.com/photo-1465311448864-6b8f28d7f0c6?auto=format&fit=crop&w=800&q=80" alt="Fisherman casting line" />
-      <img src="https://images.unsplash.com/photo-1508923567004-3a6b8004f3d2?auto=format&fit=crop&w=800&q=80" alt="Fish caught on hook" />
-      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" alt="Sunset on lake" />
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Let's Hook Up!</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Full Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email Address" required />
-      <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p style="text-align:center; margin-top: 20px;">
-      Or reach me directly at: <br />
-      <strong>WhatsApp:</strong> +27 71 234 5678 <br />
-      <strong>Email:</strong> hello@thebeardedfisher.co.za
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 The Bearded Fisher. All Rights Reserved.
-  </footer>
-
-</body>
-</html>
