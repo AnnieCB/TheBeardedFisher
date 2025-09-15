@@ -17,6 +17,7 @@
       background: url('See.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #222;
+      scroll-behavior: smooth; /* Smooth scrolling */
     }
     a {
       color: #1E456E;
@@ -74,10 +75,11 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      flex-wrap: wrap;
     }
     nav a {
       color: #eee;
-      margin: 0 25px;
+      margin: 0 15px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -86,6 +88,10 @@
     }
     nav a:hover {
       color: #1E456E;
+    }
+    nav a.active {
+      color: #1E456E;
+      border-bottom: 2px solid #1E456E;
     }
 
     /* About Section */
@@ -111,7 +117,7 @@
     }
     #about .text {
       max-width: 500px;
-      margin-left: 30%;
+      margin-left: 30%; /* Shift text right on desktop */
       text-align: left;
     }
 
@@ -255,91 +261,110 @@
       transform: scale(1.1);
     }
 
-    /* Social Icons */
-    .social-icon img {
-      width: 60px;
-      height: 60px;
-      transition: transform 0.3s ease;
-    }
-    .social-icon:hover img {
-      transform: scale(1.2);
+    /* Social Follow */
+    #social .service-item {
+      background: #1E456E;
+      color: white;
+      padding: 20px;
     }
 
-    /* Video hover preview */
-    .video-item {
-      position: relative;
-      overflow: hidden;
+    /* Videos section */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .videos-grid iframe {
+      width: 100%;
+      max-width: 500px;
+      height: 280px;
+      border: none;
       border-radius: 10px;
-      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .video-item img {
-      width: 100%;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .video-item .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      background: rgba(0,0,0,0.4);
-      transition: opacity 0.3s ease;
-    }
-    .video-item:hover img {
+    .videos-grid iframe:hover {
       transform: scale(1.05);
-    }
-    .video-item:hover .overlay {
-      opacity: 1;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-      }
       nav a {
-        margin: 10px 15px;
+        margin: 10px 10px;
         font-size: 0.85rem;
       }
-      header { height: auto; padding: 40px 20px; }
-      header img.logo { max-width: 200px; }
-      header p { font-size: 1.5rem; max-width: 100%; }
-      .btn-primary { padding: 12px 25px; font-size: 1rem; }
-      #about .content { display: block; text-align: center; background-position: center center; padding: 20px 15px; }
-      #about .text { max-width: 100%; margin-left:0; margin-top:20px; text-align:center; }
-      #about p { font-size: 1.2rem; }
-      section h2 { font-size: 2rem; letter-spacing: 2px; }
-      .services-list { flex-direction: column; align-items: stretch; gap: 15px; }
-      .service-item { flex: 1 1 100%; padding: 20px 15px; }
-      .service-item h3 { font-size: 1.3rem; }
-      .service-item p { font-size: 1rem; }
-      .gallery-grid { grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 15px; }
-      form { gap: 10px; }
-      input, textarea, button[type="submit"] { font-size: 0.95rem; padding: 12px 15px; }
-      .whatsapp-float { width: 50px; height: 50px; bottom: 15px; right: 15px; }
+
+      header {
+        height: auto;
+        padding: 40px 20px;
+      }
+      header img.logo {
+        max-width: 200px;
+      }
+      header p {
+        font-size: 1.5rem;
+      }
+      .btn-primary {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+
+      #about .content {
+        display: block;
+        text-align: center;
+        background-position: center center;
+        padding: 20px 15px;
+      }
+      #about .text {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+      }
+      #about p {
+        font-size: 1.2rem;
+      }
+
+      .services-list {
+        flex-direction: column;
+      }
+      .service-item {
+        flex: 1 1 100%;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      }
+
+      form {
+        gap: 10px;
+      }
+      input, textarea, button[type="submit"] {
+        font-size: 0.95rem;
+        padding: 12px 15px;
+      }
+
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+      }
+      .videos-grid iframe {
+        height: 200px;
+      }
     }
   </style>
 </head>
 <body>
 
   <nav>
- <nav>
-  <a href="#about">About</a>
-  <a href="#services">Trips</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#social">Follow Me</a>
-  <a href="#videos">Videos</a>
-  <a href="#contact">Contact</a>
-</nav>
-
+    <a href="#about">About</a>
+    <a href="#services">Trips</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#social">Follow Me</a>
+    <a href="#contact">Contact</a>
+    <a href="#videos">Videos</a>
   </nav>
 
   <header>
@@ -391,6 +416,22 @@
     </div>
   </section>
 
+  <section id="social" class="services">
+    <h2>Follow Me</h2>
+    <div class="services-list">
+      <div class="service-item">
+        <h3>Instagram</h3>
+        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" class="btn-primary">Instagram</a>
+      </div>
+      <div class="service-item">
+        <h3>Facebook</h3>
+        <a href="https://www.facebook.com/YOUR_FACEBOOK" target="_blank" class="btn-primary">Facebook</a>
+      </div>
+      <div class="service-item">
+        <h3>YouTube</h3>
+        <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" class="btn-primary">Channel</a>
+      </div>
+    </div>
   </section>
 
   <section id="contact" class="contact">
@@ -407,44 +448,13 @@
       <strong>Email:</strong> burgerrf@gmail.com
     </p>
   </section>
-  
-    <!-- Follow Me Section -->
-  <section id="social" class="services">
-    <h2>Follow Me</h2>
-    <div class="services-list">
-      <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" class="social-icon">
-        <img src="instagram-icon.png" alt="Instagram" />
-      </a>
-      <a href="https://www.facebook.com/YOUR_FACEBOOK" target="_blank" class="social-icon">
-        <img src="facebook-icon.png" alt="Facebook" />
-      </a>
-      <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" class="social-icon">
-        <img src="youtube-icon.png" alt="YouTube" />
-      </a>
-    </div>
 
-  <!-- Videos Section -->
-  <section id="videos" class="gallery">
+  <section id="videos" class="services">
     <h2>Videos</h2>
-    <div class="gallery-grid">
-      <div class="video-item">
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID1" target="_blank">
-          <img src="https://img.youtube.com/vi/VIDEO_ID1/hqdefault.jpg" alt="Video 1" />
-          <div class="overlay">▶ Watch</div>
-        </a>
-      </div>
-      <div class="video-item">
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID2" target="_blank">
-          <img src="https://img.youtube.com/vi/VIDEO_ID2/hqdefault.jpg" alt="Video 2" />
-          <div class="overlay">▶ Watch</div>
-        </a>
-      </div>
-      <div class="video-item">
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID3" target="_blank">
-          <img src="https://img.youtube.com/vi/VIDEO_ID3/hqdefault.jpg" alt="Video 3" />
-          <div class="overlay">▶ Watch</div>
-        </a>
-      </div>
+    <div class="videos-grid">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Video 1"></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Video 2"></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Video 3"></iframe>
     </div>
   </section>
 
@@ -457,5 +467,19 @@
     &copy; 2025 The Bearded Fisher. All Rights Reserved.
   </footer>
 
-</body>
-</html>
+  <script>
+    // Scroll spy to highlight nav links
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80; // offset for sticky nav
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('
