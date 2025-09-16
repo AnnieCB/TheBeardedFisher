@@ -253,33 +253,13 @@ background-image: url('Steenbras.JPG'); /* your header photo */
   transform: scale(1.2); /* Zoom effect on hover */
 }
 
-
-    #videos { text-align: center; padding: 60px 20px; }
-    #videos h2 { font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase; }
-    .video-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
-    .video-thumb {
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .video-thumb:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.35); }
-    .video-thumb img { width: 100%; display: block; }
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 70px;
-      height: 70px;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_(2017).svg') no-repeat center center / contain;
-      transform: translate(-50%, -50%);
-      opacity: 0.85;
-      transition: opacity 0.3s ease;
-    }
-    .video-thumb:hover .play-button { opacity: 1; }
-
+.video-container iframe {
+  width: 100%;
+  height: 500px; /* bigger for desktop */
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+   
    /* MOBILE STYLES */
 @media (max-width: 768px) {
   /* NAVIGATION */
