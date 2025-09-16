@@ -20,19 +20,38 @@
     a:hover { text-decoration: underline; }
 
     header {
-      background: url('Steenbras.JPG');
-      background-repeat: no-repeat;
-      background-size: 120%;
-      background-position: 10% 70%;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #000;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
+  background-image: url('Ruan gooi.jpeg'); /* your header photo */
+  background-size: 120%;       /* initial zoom */
+  background-position: center; /* starting position */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional for parallax effect */
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  animation: zoomPan 15s ease-in-out infinite alternate; /* animation */
+}
+
+/* Keyframes for zooming and panning */
+@keyframes zoomPan {
+  0% {
+    background-size: 110%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 125%;
+    background-position: center center;
+  }
+  100% {
+    background-size: 130%;
+    background-position: right center;
+  }
+}
     }
     header img.logo { max-width: 400px; width: 80%; height: auto; margin-bottom: 20px; }
     header p { font-size: 2rem; margin-bottom: 2rem; max-width: 750px; font-weight: 500; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); }
