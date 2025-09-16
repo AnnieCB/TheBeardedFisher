@@ -20,11 +20,11 @@
     a:hover { text-decoration: underline; }
 
     header {
-  background-image: url('Steenbras.JPG'); /* your header photo */
-  background-size: 120%;       /* initial zoom */
-  background-position: center 70%; /* starting position */
+ background-image: url('Steenbras.JPG');
+  background-size: 120%;
+  background-position: right 25%; /* start at right, 25% vertical to show bottom */
   background-repeat: no-repeat;
-  background-attachment: fixed; /* optional for parallax effect */
+  background-attachment: fixed;
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -34,18 +34,17 @@
   text-align: center;
   padding: 0 20px;
   position: relative;
-  animation: ZoomPan 30s ease-in-out; /* animation */
+  animation: panZoom 30s ease-in-out forwards;
 }
 
-/* Keyframes for zooming and panning */
-@keyframes zoomPan {
+@keyframes panZoom {
   0% {
-    background-size: 140%;
-    background-position: left 70%;
+    background-size: 110%;
+    background-position: right 25%; /* start top-right-ish */
   }
-  50% {
-    background-size: 145%;
-    background-position: center 75%;
+  100% {
+    background-size: 125%;
+    background-position: center 25%; /* slowly move to center horizontally, same vertical */
   }
 }
     }
