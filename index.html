@@ -272,12 +272,12 @@
       header img.logo { max-width: 200px; }
       header p { font-size: 1.5rem; }
       .btn-primary { padding: 12px 25px; font-size: 1rem; }
- #about .content {
-     display: block; /* stack content vertically */
-    text-align: center; 
-    background-size: 320%; /* zoom more if needed */
-    background-position: center top; /* move image up */
-    padding: 20px 15px;
+  #about .content {
+    display: block;
+    text-align: center;
+    background-size: 120vw;       /* zoom relative to screen width */
+    background-position: 50% 15vh; /* vertical offset relative to viewport height */
+    padding: 5vh 5vw;             /* padding scales with viewport */
   }
 
   #about .text {
