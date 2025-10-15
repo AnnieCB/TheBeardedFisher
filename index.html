@@ -23,7 +23,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="LogoWit.jpg" />
 
- <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
   <style>
     /* Reset */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -194,8 +193,7 @@ background-image: url('Steenbras.JPG'); /* your header photo */
    .gallery-grid img {
   width: 100%;
   height: 250px;            /* set a fixed height for all images */
-  object-fit: contain;        /* keeps the image filled and crops if necessary */
-  background-color: #fff; /* optional: white padding around */
+  object-fit: cover;        /* keeps the image filled and crops if necessary */
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
@@ -380,13 +378,6 @@ background-image: url('Steenbras.JPG'); /* your header photo */
   }
 }
 
-  /* FORCE Lightbox arrows and close button to show above everything */
-  .lb-data .lb-prev,
-  .lb-data .lb-next,
-  .lb-data .lb-close {
-    display: block !important;
-    z-index: 9999 !important;
-  }
 
   </style>
 </head>
@@ -464,18 +455,18 @@ background-image: url('Steenbras.JPG'); /* your header photo */
 <section id="gallery" class="gallery">
   <h2>Catch of the Day</h2>
   <div class="gallery-grid">
-    <a href="1.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 1"><img src="1.jpeg" alt="Catch 1" /></a>
-    <a href="fish4.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 2"><img src="fish4.jpeg" alt="Catch 2" /></a>
-    <a href="fish3.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 3"><img src="fish3.jpeg" alt="Catch 3" /></a>
-    <a href="4.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 4"><img src="4.jpeg" alt="Catch 4" /></a>
-    <a href="fish5.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 5"><img src="fish5.jpeg" alt="Catch 5" /></a>
-    <a href="fish6.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 6"><img src="fish6.jpeg" alt="Catch 6" /></a>
-    <a href="fish2.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 7"><img src="fish2.jpeg" alt="Catch 7" /></a>
-    <a href="Fish1.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 8"><img src="Fish1.jpeg" alt="Catch 8" /></a>
-    <a href="6.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 9"><img src="6.jpeg" alt="Catch 9" /></a>
-    <a href="2.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 10"><img src="2.jpeg" alt="Catch 10" /></a>
-    <a href="3.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 11"><img src="3.jpeg" alt="Catch 11" /></a>
-    <a href="5.jpeg" data-lightbox="fishing-gallery" data-title="Catch of the Day 12"><img src="5.jpeg" alt="Catch 12" /></a>
+    <a href="1.jpeg" data-title="Catch of the Day 1"><img src="1.jpeg" alt="Catch 1" /></a>
+    <a href="fish4.jpeg" data-title="Catch of the Day 2"><img src="fish4.jpeg" alt="Catch 2" /></a>
+    <a href="fish3.jpeg" data-title="Catch of the Day 3"><img src="fish3.jpeg" alt="Catch 3" /></a>
+    <a href="4.jpeg" data-title="Catch of the Day 4"><img src="4.jpeg" alt="Catch 4" /></a>
+    <a href="fish5.jpeg" data-title="Catch of the Day 5"><img src="fish5.jpeg" alt="Catch 5" /></a>
+    <a href="fish6.jpeg" data-title="Catch of the Day 6"><img src="fish6.jpeg" alt="Catch 6" /></a>
+    <a href="fish2.jpeg" data-title="Catch of the Day 7"><img src="fish2.jpeg" alt="Catch 7" /></a>
+    <a href="Fish1.jpeg" data-title="Catch of the Day 8"><img src="Fish1.jpeg" alt="Catch 8" /></a>
+    <a href="6.jpeg" data-title="Catch of the Day 9"><img src="6.jpeg" alt="Catch 9" /></a>
+    <a href="2.jpeg" data-title="Catch of the Day 10"><img src="2.jpeg" alt="Catch 10" /></a>
+    <a href="3.jpeg" data-title="Catch of the Day 11"><img src="3.jpeg" alt="Catch 11" /></a>
+    <a href="5.jpeg" data-title="Catch of the Day 12"><img src="5.jpeg" alt="Catch 12" /></a>
   </div>
 </section>
 
@@ -547,17 +538,6 @@ background-image: url('Steenbras.JPG'); /* your header photo */
 <footer>
   &copy; 2025 The Bearded Fisher. All Rights Reserved.
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-<script>
-  lightbox.option({
-    resizeDuration: 200,
-    wrapAround: true,
-    fadeDuration: 200,
-    imageFadeDuration: 200,
-    positionFromTop: 50
-  });
-</script>
 
 </body>
 </html>
