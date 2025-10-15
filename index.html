@@ -22,6 +22,9 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="LogoWit.jpg" />
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
 </head>
   <style>
     /* Reset */
@@ -378,11 +381,6 @@ background-image: url('Steenbras.JPG'); /* your header photo */
     scroll-margin-top: 60px; /* offset for sticky nav on mobile */
   }
 }
-   <!-- Lightbox2 CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-
-<!-- Lightbox2 JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
   </style>
 </head>
@@ -568,6 +566,15 @@ background-image: url('Steenbras.JPG'); /* your header photo */
 <footer>
   &copy; 2025 The Bearded Fisher. All Rights Reserved.
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
+  lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true,
+    'fadeDuration': 200,
+    'imageFadeDuration': 200
+  });
+</script>
 
 </body>
 </html>
